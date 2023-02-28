@@ -1,0 +1,319 @@
+/* Define Flare's colors */
+:root>* {
+    --md-accent-fg-color: #d3385b;
+    --md-accent-fg-color--transparent: #d3385b40;
+    --md-default-fg-color--light: #222;
+    --md-footer-bg-color: var(--md-primary-bg-color--lighter);
+    --md-typeset-a-color: var(--md-primary-bg-color);
+    --md-code-bg-color--transparent: var(--md-code-bg-color);
+}
+
+[data-md-color-scheme="flaredark"] {
+    --md-default-bg-color: #222;
+    --md-default-fg-color: white;
+    --md-default-fg-color--light: white;
+    --md-default-fg-color--lighter: #555;
+    --md-default-fg-color--lightest: #444;
+    --md-primary-fg-color: #222;
+    --md-primary-fg-color--light: #333;
+    --md-primary-fg-color--dark: #111;
+    --md-primary-bg-color: #bbb;
+    --md-primary-bg-color--light: #888;
+    --md-typeset-color: var(--md-primary-bg-color);
+    --md-typeset-a-color: var(--md-primary-bg-color);
+    /* Code highlighting color shades */
+    --md-code-bg-color: black;
+    --md-code-bg-color--transparent: #0008;
+    --md-code-fg-color: var(--md-primary-bg-color--light);
+    --md-code-hl-operator-color: var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+    --md-code-hl-comment-color: var(--md-default-fg-color--lighter);
+    --md-code-hl-name-color: var(--md-code-fg-color);
+    --md-code-hl-operator-color: var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+    --md-code-hl-comment-color: var(--md-default-fg-color--light);
+    --md-code-hl-generic-color: var(--md-default-fg-color--light);
+    --md-code-hl-variable-color: var(--md-default-fg-color--light);
+    --md-code-hl-color: var(--md-accent-fg-color--transparent);
+}
+
+/* Remove shadow under header */
+.md-header {
+    box-shadow: none;
+}
+
+/* Logo and title: color and alignment */
+.md-header__title,
+.md-logo {
+    line-height: 2.8rem;
+    color: var(--md-default-fg-color);
+}
+
+/* Cookie consent buttons */
+.md-typeset .md-button {
+    background-color: var(--md-accent-fg-color);
+    color: var(--md-default-bg-color);
+}
+
+/* Back to top button */
+.md-top {
+    background: var(--md-default-fg-color--lighter);
+}
+
+/* Restore admonition and details text size and colors */
+.md-typeset :is(.admonition, details) {
+    font-size: initial;
+    background-color: var(--md-default-bg-color--lightest);
+    color: var(--md-typeset-color);
+}
+.md-typeset :is(.admonition-title, summary) {
+    color: var(--md-default-fg-color);
+}
+/* Remove little extra margin when admonitions are inside lists */
+.md-typeset li .admonition-title {
+    margin-top: 0 !important;
+}
+/* Custom borderless admonition, just to help position images. Use with: */
+/* !!! image inline end "" */
+.md-typeset .admonition.image,
+.md-typeset details.image {
+    border: 0;
+    box-shadow: none;
+}
+/* Slightly darker admonition headers */
+.md-typeset :is(.note) > :is(.admonition-title, summary) {
+    background-color: #448AFF55;
+}
+.md-typeset :is(.tip, .important) > :is(.admonition-title, summary) {
+    background-color: #00BFA555;
+}
+.md-typeset :is(.caution, .warning, .attention) > :is(.admonition-title, summary) {
+    background-color: #FF910055;
+}
+.md-typeset :is(.danger)> :is(.admonition-title, summary) {
+    background-color: #FF174455;
+}
+.md-typeset :is(.info)> :is(.admonition-title, summary) {
+    background-color: #00B8D455;
+}
+.md-typeset :is(.example)> :is(.admonition-title, summary) {
+    background-color: #7D4CFF55;
+}
+
+/* Hide the GitHub link at the top, it's not that interesting */
+.md-header__source,
+.md-nav__source {
+    display: none;
+}
+
+/* Underline links in the main text. Our primary color is too close
+ * to the regular text color and links are invisible. */
+.md-typeset a {
+    text-decoration: underline;
+}
+
+/* Do not underline the permalinks in the headers */
+.headerlink {
+    text-decoration: none !important;
+}
+
+/* Glossary */
+dt {
+    color: var(--md-primary-bg-color);
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+dt:target {
+    background: var(--md-accent-fg-color--transparent);
+    border-radius: 4px;
+}
+
+/* Glossary links */
+a[href*="/glossary/#"] {
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+}
+
+/* Enlarge Flare logo in the header */
+.md-header__button.md-logo {
+    padding: 0;
+}
+
+.md-header__button.md-logo :-webkit-any(img, svg) {
+    height: 1.5rem;
+}
+
+/* Side by side images */
+figure img.side-by-side {
+    display: inline;
+    width: 49%;
+}
+
+/* BETA tags
+ * Use as: `BETA`{.beta} */
+.md-typeset code.beta {
+    background-color: var(--md-accent-fg-color);
+    color: white;
+    border-radius: 0.3rem;
+}
+
+/* Separating line for the glossary nav link */
+.md-nav__item [href*="glossary/"] {
+    border-top: solid 1px var(--md-default-fg-color--lightest);
+    padding-top: 8px;
+}
+
+/* Bold text for current page in TOC and TABS*/
+.md-nav__link--active,
+.md-tabs__link--active {
+    font-weight: bold;
+}
+
+/* Highlight header links on hover */
+.md-tabs__link:is(:focus, :hover),
+.md-header__button:is(:focus, :hover) {
+    color: var(--md-accent-fg-color);
+}
+
+/* Header separator line */
+.md-header .md-tabs {
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Cards */
+.md-typeset .cards ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 0;
+}
+
+.md-typeset .cards ul li {
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 16px;
+    width: 550px;
+    padding: 8px;
+    margin-left: 0;
+    transition: background 0.25s;
+    padding: 16px;
+}
+
+.md-typeset .cards ul li:hover {
+    background: rgba(181, 78, 95, 0.2);
+    border: 1px solid var(--md-default-fg-color);
+}
+
+.md-typeset .cards p {
+    margin: 0;
+}
+
+.md-typeset .cards strong {
+    color: var(--md-accent-fg-color);
+}
+
+.md-typeset .cards a {
+    text-decoration: none;
+    color: var(--md-primary-bg-color);
+}
+
+.md-typeset .cards svg {
+    float: left;
+    margin-right: 16px;
+}
+
+/* Recolor SVG icons in cards */
+.stroked-svg svg path,
+.stroked-svg svg line,
+.stroked-svg svg circle,
+.stroked-svg svg ellipse {
+    stroke: var(--md-primary-bg-color);
+}
+
+.filled-svg svg path,
+.filled-svg svg line,
+.filled-svg svg circle,
+.filled-svg svg ellipse {
+    fill: var(--md-primary-bg-color);
+}
+
+.big-svg {
+    text-align: center;
+}
+
+.big-svg svg {
+    width: 25%;
+}
+
+/* Images */
+.md-content figure {
+    background: white;
+    border-color: var(--md-default-fg-color--lighter);
+    border-width: 8px 1px 1px 1px;
+    border-style: solid;
+}
+
+.md-content figure img {
+    padding: 8px;
+}
+
+.md-content figure figcaption {
+    background: var(--md-default-fg-color--lighter);
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: 100%;
+}
+
+.md-content figure:hover {
+    border-color: var(--md-accent-fg-color);
+}
+
+.md-content figure:hover figcaption {
+    background: var(--md-accent-fg-color);
+}
+
+/* Tables */
+.md-typeset table:not([class]),
+.md-typeset table:not([class]) td {
+    border-color: var(--md-default-fg-color--lightest);
+}
+.md-typeset table:not([class]) th {
+    background-color: var(--md-code-bg-color--transparent);
+}
+
+/* Inline code blocks */
+.md-typeset code {
+    background: var(--md-code-bg-color--transparent);
+}
+.md-typeset pre code {
+    background: var(--md-code-bg-color);
+}
+
+/* Custom admonition for Tools */
+:root {
+    --md-admonition-icon--tool: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g><path d="M710,619.5c-8-7.9-18.9-12.2-29.4-13.1c-21.7-1.8-43.6-10-60.2-26.2c-16.6-16.4-25.5-37.6-26.6-59.1c-0.5-10.5-5.3-20.8-13.3-28.9c-17.8-17.7-47.1-17.7-64.9,0l-28.5,28L191.6,237.2c0,0-14.3-11.7-16.4-22.4c-2.4-12.8-4.5-29.2-18.4-41.1c-25.2-21.5-67.4-54.9-93.6-73.3c-11-7.7-18.7-6.1-26.4,1.6l-20.1,19.8c-7.7,7.5-9.4,15-1.6,25.9c18.5,25.7,52.7,67.2,74.5,91.9c12.1,13.6,28.9,15.6,41.8,18c10.8,2.1,22.7,16.1,22.7,16.1l288.1,290.3l-28.5,28c-18,17.7-18,46.2,0,63.9c8.2,8,18.7,12.6,29.4,13.1c21.9,1,43.6,9.8,60.2,26.1c16.6,16.3,24.8,37.8,26.6,59.1c0.9,10.3,5.2,21,13.3,28.9L727,963.5c35.9,35.3,94.1,35.3,130,0l36.6-36c35.9-35.3,35.9-92.4,0-127.7L710,619.5L710,619.5z" /><path d="M989.4,202.6l-172.2,92.9l-78.4-46.7l1.9-89.9l178.3-96.2c-82.9-72.8-210.5-70-290.1,8.2c-50.9,50-70.3,119.2-58.6,183.7c2.8,15.2-1,31.1-14,43.9L436.6,416.5l50.2,48.1l0.4-0.4c16.3-15.9,38-24.8,61.1-24.8s44.8,8.7,61.1,24.8c7.9,7.9,14.2,17,18.4,26.9l58.3-57.2c13.1-13,31.8-17.3,48.5-13.1c67.2,16.8,141.2-4.4,193.8-56.2C973.3,320.1,993.8,260.7,989.4,202.6L989.4,202.6z" /><path d="M385.3,564l0.4-0.4l-48.8-49.2L49.1,797.1c-36.9,36.2-36.9,94.8,0,131.1c36.9,36.2,96.6,36.2,133.5,0L413,701.9c-10-4.2-19.4-10.3-27.3-18.2C351.7,650.8,351.7,597.1,385.3,564L385.3,564z" /></g></svg>')
+}
+
+.md-typeset .admonition.tool,
+.md-typeset details.tooL {
+    border-color: #d3385b80;
+}
+
+.md-typeset .tool>.admonition-title,
+.md-typeset .tool>summary {
+    background-color: #d3385b40;
+}
+
+.md-typeset .tool>.admonition-title::before,
+.md-typeset .tool>summary::before {
+    background-color: #d3385b;
+    -webkit-mask-image: var(--md-admonition-icon--tool);
+    mask-image: var(--md-admonition-icon--tool);
+}
+
+/* Tabbed boxes */
+.md-typeset .tabbed-labels>label {
+    color: var(--md-typeset-color);
+}
